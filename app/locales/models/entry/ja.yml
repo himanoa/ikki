@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      entry: "Entry"
+    attributes:
+      entry:
+        id: "ID"
+        title: "Title"
+        body: "Body"
+        body_md: "BodyMd"
+        updated_at: "UpdatedAt"

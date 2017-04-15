@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Premailer::Rails.config = Premailer::Rails.config.merge(
   line_length: 65,
   remove_ids: false,

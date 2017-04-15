@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   config.public_file_server.enabled = false
   # Settings specified here will take precedence over those in config/application.rb.
