@@ -80,3 +80,6 @@ Performance/RedundantMerge:
 
 Rails/ActionFilter:
   EnforcedStyle: action
+AllCops:
+  Exclute:
+    - 'db/**/*'
