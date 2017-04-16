@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - 2.4.1
+  - 2.4.0
+service:
+  - mysql
+bundler_args: "--without development --deployment"
+cache: bundler
+before_script:
+  - export RAILS_ENV=test
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+script:
+  - bundle exec rubocop
+  - bundle exec rails spec
