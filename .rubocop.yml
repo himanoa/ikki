@@ -2,7 +2,11 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   Exclude:
-    - 'db/**/*'
+   - 'db/**/*'
+   - 'config/**/*'
+   - 'script/**/*'
+   - 'bundle_bin/*'
+   - 'bin/*'
 
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
