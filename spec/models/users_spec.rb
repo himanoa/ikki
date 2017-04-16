@@ -35,4 +35,11 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
   end
+  context 'password' do
+    it 'is not valid when password equal password_confirmation' do
+      user = User.new(name: 'himanoa', email: 'matsunoappy@gmail.com',
+                      password: 'a', password_confirmation: 'aa')
+      expect(user).not_to be_valid
+    end
+  end
 end
