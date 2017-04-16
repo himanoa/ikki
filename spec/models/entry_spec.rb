@@ -36,4 +36,10 @@ RSpec.describe Entry, type: :model do
       expect(user.entries[0].errors[:updated_at]).to be_present
     end
   end
+  context 'is_hidden' do
+    it 'is not nil' do
+      user.entries[0].is_hidden = nil
+      expect(user.entries[0]).not_to be_valid
+    end
+  end
 end
