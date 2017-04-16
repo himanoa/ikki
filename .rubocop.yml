@@ -1,6 +1,8 @@
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
+  Exclude:
+    - 'db/**/*'
 
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
@@ -80,7 +82,3 @@ Performance/RedundantMerge:
 
 Rails/ActionFilter:
   EnforcedStyle: action
-AllCops:
-  Exclute:
-    - 'db/**/*'
-    - 'db/*'
