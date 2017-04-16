@@ -4,7 +4,6 @@ rvm:
   - 2.4.0
 service:
   - mysql
-cache: bundler
 before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
