@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        id: "ID"
+        name: "Name"
+        email: "Email"
+        password_digest: "PasswordDigest"
