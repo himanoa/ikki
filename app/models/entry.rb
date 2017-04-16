@@ -5,4 +5,5 @@ class Entry < ApplicationRecord
   validates :body, presence: true
   validates :body_md, presence: true
   validates :updated_at, presence: true
+  belongs_to :user
 end
