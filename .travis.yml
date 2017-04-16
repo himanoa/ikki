@@ -4,7 +4,6 @@ rvm:
   - 2.4.0
 service:
   - mysql
-bundler_args: "--without development --deployment"
 cache: bundler
 before_script:
   - bundle exec rake db:create
