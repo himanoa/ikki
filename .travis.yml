@@ -9,5 +9,5 @@ before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
 script:
-  - bundle exec rubocop
+  - rubocop
   - bundle exec rails spec
