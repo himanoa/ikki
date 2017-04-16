@@ -8,6 +8,6 @@ before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
 script:
-  - pwd
+  - ls
   - bundle exec rubocop -c .rubocop.yml
   - bundle exec rails spec
