@@ -83,3 +83,4 @@ Rails/ActionFilter:
 AllCops:
   Exclute:
     - 'db/**/*'
+    - 'db/*'
