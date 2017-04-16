@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/himanoa/ikki.svg?branch=master)](https://travis-ci.org/himanoa/ikki)
 # ikki
 
 ## Requirements
