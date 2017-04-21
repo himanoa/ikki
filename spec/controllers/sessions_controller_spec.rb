@@ -27,5 +27,8 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to have_http_status(302)
       expect(response.body).to redirect_to(:root)
     end
+    it 'passed when session cleaned' do
+      expect(session['user_id']).to eq(nil)
+    end
   end
 end
