@@ -1,0 +1,6 @@
+h1 Sessions#new
+p Find me in app/views/sessions/new.html.slim
+= form_for(:session, url: login_path) do |f|
+  =  f.email_field :email, class: 'form-control'
+  =  f.password_field :password, class: 'form-control'
+  =  f.submit "login"

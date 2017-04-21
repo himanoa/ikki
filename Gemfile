@@ -53,6 +53,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'ffaker'
+  gem 'rails-controller-testing'
   gem 'rspec-power_assert'
   gem 'simplecov', require: false
 end
