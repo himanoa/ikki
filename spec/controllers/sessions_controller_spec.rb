@@ -20,7 +20,7 @@ RSpec.describe SessionsController, type: :controller do
   end
   describe 'DELETE #destroy' do
     before do
-      add_session({ user_id: 1 })
+      add_session(user_id: 1)
       delete :destroy
     end
     it 'redirect to root_path' do
