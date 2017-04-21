@@ -18,4 +18,14 @@ RSpec.describe SessionsController, type: :controller do
       expect(response.body).to render_template('sessions/new')
     end
   end
+  describe 'DELETE #destroy' do
+    before do
+      add_session({ user_id: 1 })
+      delete :destroy
+    end
+    it 'redirect to root_path' do
+      expect(response).to have_http_status(302)
+      expect(response.body).to redirect_to(:root)
+    end
+  end
 end
