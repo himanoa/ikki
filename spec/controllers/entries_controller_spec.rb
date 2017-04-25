@@ -18,7 +18,7 @@ RSpec.describe EntriesController, type: :controller do
     # end
     context 'loggout' do
       before do
-        session["user_id"] = nil
+        session['user_id'] = nil
       end
       it 'return fail when created entries' do
         post :create, FactoryGirl.build(:entry).attributes
