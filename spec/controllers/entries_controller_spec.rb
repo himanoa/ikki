@@ -27,6 +27,15 @@ RSpec.describe EntriesController, type: :controller do
       end
     end
   end
+  describe 'PUT#update' do
+    context 'loggined' do
+      before do
+        session['user_id'] = user.id
+        @entry = user.entries.build(FactoryGirl.attributes_for(:entry))
+        @entry.save
+      end
+    end
+  end
   describe 'DELETE#destroy' do
     context 'loggined' do
       before do

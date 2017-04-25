@@ -28,6 +28,10 @@ RSpec.describe User, type: :model do
       user.save
       expect(FactoryGirl.build(:user)).not_to be_valid
     end
+    it 'is not valid when email is not email format' do
+      user.email = 'a'
+      expect(user).not_to be_valid
+    end
   end
   context 'password_digest' do
     it 'is not valid when password_digest is empty' do
