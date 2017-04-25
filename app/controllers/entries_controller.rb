@@ -23,4 +23,19 @@ class EntriesController < ApplicationController
   end
 
   def edit; end
+
+  def destroy
+    user = check_login
+    unless user
+      head 403
+      return
+    end
+    entry = user.entries.find_by(id: params[:id])
+    if entry
+      entry.destroy
+      head 200
+      return
+    end
+    head 400
+  end
 end
