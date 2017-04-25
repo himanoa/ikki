@@ -13,14 +13,13 @@
 ActiveRecord::Schema.define(version: 20170418164032) do
 
   create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",                         null: false
-    t.text     "body",            limit: 65535, null: false
-    t.text     "body_md",         limit: 65535, null: false
-    t.datetime "updated_at",                    null: false
-    t.datetime "created_at",                    null: false
-    t.integer  "user_id",                       null: false
-    t.boolean  "is_hidden",                     null: false
-    t.string   "password_digest",               null: false
+    t.string   "title",                    null: false
+    t.text     "body",       limit: 65535, null: false
+    t.text     "body_md",    limit: 65535, null: false
+    t.datetime "updated_at",               null: false
+    t.datetime "created_at",               null: false
+    t.integer  "user_id",                  null: false
+    t.boolean  "is_hidden",                null: false
   end
 
   create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

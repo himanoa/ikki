@@ -6,5 +6,6 @@ FactoryGirl.define do
     body 'MyText'
     body_md 'MyText'
     updated_at '2017-04-16 02:17:12'
+    is_hidden false
   end
 end

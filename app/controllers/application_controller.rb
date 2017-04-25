@@ -3,6 +3,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def check_login
-    redirect_to root_path unless session[:user]
+    User.find_by(id: session[:user_id])
   end
 end
