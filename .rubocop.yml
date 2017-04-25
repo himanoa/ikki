@@ -35,7 +35,7 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   CountComments: false
-  Max: 45
+  Max: 90
   ExcludedMethods: []
   Exclude:
     - Guardfile
