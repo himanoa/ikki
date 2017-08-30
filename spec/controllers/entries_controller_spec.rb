@@ -22,7 +22,7 @@ RSpec.describe EntriesController, type: :controller do
       end
       it 'return fail when created entries' do
         post :create, FactoryGirl.build(:entry).attributes
-        expect(response).to have_http_status(403)
+        expect(response).to have_http_status(302)
         expect(Entry.count).to eq(0)
       end
     end
@@ -63,7 +63,7 @@ RSpec.describe EntriesController, type: :controller do
       end
       it 'return fail when session is nil' do
         delete :destroy, id: @entry.id
-        expect(response).to have_http_status(403)
+        expect(response).to have_http_status(302)
         expect(Entry.count).to eq(1)
       end
     end
