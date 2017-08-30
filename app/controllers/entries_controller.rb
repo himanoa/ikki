@@ -10,7 +10,6 @@ class EntriesController < ApplicationController
     entry = @user.entries.build(
       title: params[:title],
       body: params[:body],
-      body_md: params[:body_md],
       updated_at: params[:updated_at],
       is_hidden: params[:is_hidden]
     )

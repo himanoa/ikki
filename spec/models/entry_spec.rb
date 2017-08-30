@@ -22,13 +22,6 @@ RSpec.describe Entry, type: :model do
       expect(user.entries[0].errors[:body]).to be_present
     end
   end
-  context 'body_md' do
-    it 'is not nil' do
-      user.entries[0].body_md = nil
-      expect(user.entries[0]).not_to be_valid
-      expect(user.entries[0].errors[:body_md]).to be_present
-    end
-  end
   context 'updated_at' do
     it 'is not nil' do
       user.entries[0].updated_at = nil
