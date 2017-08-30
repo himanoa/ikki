@@ -10,7 +10,7 @@ RSpec.describe EntriesController, type: :controller do
         session['user_id'] = user.id
       end
       it 'return success when created entries' do
-        post :create, FactoryGirl.build(:entry).attributes
+        post :create, params: FactoryGirl.build(:entry).attributes
         expect(response).to have_http_status(201)
         expect(Entry.count).to eq(1)
         expect(Entry.first.user.id).to eq(user.id)
@@ -21,7 +21,7 @@ RSpec.describe EntriesController, type: :controller do
         session['user_id'] = nil
       end
       it 'return fail when created entries' do
-        post :create, FactoryGirl.build(:entry).attributes
+        post :create, params: FactoryGirl.build(:entry).attributes
         expect(response).to have_http_status(302)
         expect(Entry.count).to eq(0)
       end
@@ -44,13 +44,13 @@ RSpec.describe EntriesController, type: :controller do
         @entry.save
       end
       it 'return success when deleted entry' do
-        delete :destroy, id: @entry.id
+        delete :destroy, params: { id: @entry.id }
         expect(response).to have_http_status(200)
         expect(Entry.count).to eq(0)
       end
       it 'return fail when deleted entry' do
-        delete :destroy, id: @entry.id
-        delete :destroy, id: @entry.id
+        delete :destroy, params: { id: @entry.id }
+        delete :destroy, params: { id: @entry.id }
         expect(response).to have_http_status(400)
         expect(Entry.count).to eq(0)
       end
@@ -62,7 +62,7 @@ RSpec.describe EntriesController, type: :controller do
         @entry.save
       end
       it 'return fail when session is nil' do
-        delete :destroy, id: @entry.id
+        delete :destroy, params: { id: @entry.id }
         expect(response).to have_http_status(302)
         expect(Entry.count).to eq(1)
       end

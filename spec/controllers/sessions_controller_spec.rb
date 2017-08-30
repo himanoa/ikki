@@ -13,7 +13,6 @@ RSpec.describe SessionsController, type: :controller do
     end
     it 'returns renderer template equal new' do
       get :new
-      p response.body
       expect(response).to have_http_status(:success)
       expect(response.body).to render_template('sessions/new')
     end

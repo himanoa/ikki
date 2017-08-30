@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Sessionable
   extend ActiveSupport::Concern
   included do
-    before_action :login_required, except: [:show, :index]
+    before_action :login_required, except: %i[show index]
   end
 
   def login_required

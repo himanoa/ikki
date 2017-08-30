@@ -3,6 +3,7 @@
 class EntriesController < ApplicationController
   include Sessionable
   def new; end
+
   def show; end
 
   def create

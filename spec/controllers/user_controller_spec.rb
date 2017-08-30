@@ -12,12 +12,12 @@ RSpec.describe UsersController, type: :controller do
           password: 'poe',
           password_confirmation: 'p'
         }
-        response = post(:create, user: user)
+        response = post(:create, params: { user: user })
         expect(response.status).to eq(400)
       end
       it 'return status code 201' do
         response = post(:create,
-          user: FactoryGirl.attributes_for(:user))
+          params: { user: FactoryGirl.attributes_for(:user) })
         expect(response).to be_success
         expect(response.status).to eq(201)
       end
@@ -25,7 +25,7 @@ RSpec.describe UsersController, type: :controller do
     context 'database count check' do
       it 'saves the new user in the database' do
         response = post(:create,
-          user: FactoryGirl.attributes_for(:user))
+          params: { user: FactoryGirl.attributes_for(:user) })
         expect(response).to be_success
         expect(User.count).to eq(1)
       end
