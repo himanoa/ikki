@@ -1,11 +1,11 @@
 ja:
   activerecord:
     models:
-      entry: "Entry"
+      entry: "記事"
     attributes:
       entry:
         id: "ID"
-        title: "Title"
-        body: "Body"
-        body_md: "BodyMd"
-        updated_at: "UpdatedAt"
+        title: "タイトル"
+        body: "本文"
+        updated_at: "最終更新日時"
+        created_at: "作成日時"
