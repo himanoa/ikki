@@ -14,9 +14,6 @@ class EntriesController < ApplicationController
   def show; end
 
   def create
-    entry = @user.entries.build(entry_params)
-    entry.valid?
-    p entry.errors
     if @user.entries.build(entry_params).save
       head 201
     end

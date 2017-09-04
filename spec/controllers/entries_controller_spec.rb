@@ -10,7 +10,7 @@ RSpec.describe EntriesController, type: :controller do
         session['user_id'] = user.id
       end
       it 'return success when created entries' do
-        post :create, params: FactoryGirl.build(:entry).attributes
+        post :create, params: { entry: FactoryGirl.build(:entry).attributes }
         expect(response).to have_http_status(201)
         expect(Entry.count).to eq(1)
         expect(Entry.first.user.id).to eq(user.id)
