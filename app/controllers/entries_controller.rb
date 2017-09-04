@@ -4,25 +4,22 @@ class EntriesController < ApplicationController
   include Sessionable
 
   def index
-    @entries = Entries.where(is_hidden: true).order_by(:created_at, :desc).page(params[:page])
+    @entries = Entry.where(is_hidden: false).order(created_at: :desc).page(params[:page])
   end
 
-  def new; end
+  def new
+    @entry = @user.entries.build
+  end
 
   def show; end
 
   def create
-    entry = @user.entries.build(
-      title: params[:title],
-      body: params[:body],
-      updated_at: params[:updated_at],
-      is_hidden: params[:is_hidden]
-    )
-    if entry.save
+    entry = @user.entries.build(entry_params)
+    entry.valid?
+    p entry.errors
+    if @user.entries.build(entry_params).save
       head 201
-      return
     end
-    head 400
   end
 
   def edit; end
@@ -35,5 +32,11 @@ class EntriesController < ApplicationController
       return
     end
     head 400
+  end
+
+  private
+
+  def entry_params
+    params.require(:entry).permit(:title, :body, :is_hidden)
   end
 end

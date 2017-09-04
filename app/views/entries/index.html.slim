@@ -1,1 +1,8 @@
-h1 人間なんだけど人間なんですよね
+ul.entries-list
+  - @entries.each do |e|
+    li
+      h4 = link_to e.title, entry_path(e)
+      h5 = e.updated_at
+      p = e.body
+
+= paginate @entries
