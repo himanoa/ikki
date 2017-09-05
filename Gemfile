@@ -25,6 +25,9 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 gem 'canonical-rails'
+gem 'commonmarker'
+gem 'github-linguist'
+gem 'html-pipeline'
 gem 'locale_kit'
 gem 'meta-tags'
 gem 'premailer-rails'
@@ -32,9 +35,6 @@ gem 'rails-i18n'
 gem 'sitemap_generator'
 gem 'slim-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'html-pipeline'
-gem 'github-linguist'
-gem 'commonmarker'
 group :development do
   gem 'brakeman', require: false
   gem 'guard', require: false
