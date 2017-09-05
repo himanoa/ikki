@@ -98,6 +98,9 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    html-pipeline (2.7.0)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
     htmlentities (4.3.4)
     i18n (0.8.6)
     jbuilder (2.7.0)
@@ -322,6 +325,7 @@ DEPENDENCIES
   guard-process
   guard-rails
   guard-rspec
+  html-pipeline
   jbuilder (~> 2.5)
   kaminari
   letter_opener
