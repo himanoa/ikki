@@ -11,7 +11,9 @@ class EntriesController < ApplicationController
     @entry = @user.entries.build
   end
 
-  def show; end
+  def show
+    @entry = Entry.find params[:id]
+  end
 
   def create
     head 201 if @user.entries.build(entry_params).save
