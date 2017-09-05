@@ -33,6 +33,8 @@ gem 'sitemap_generator'
 gem 'slim-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'html-pipeline'
+gem 'github-linguist'
+gem 'commonmarker'
 group :development do
   gem 'brakeman', require: false
   gem 'guard', require: false
