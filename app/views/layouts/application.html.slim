@@ -9,4 +9,5 @@ html(lang="#{I18n.locale}")
     = content_for?(:head) ? yield(:head) : nil
 
   body(class="#{controller.controller_name}")
+    = render 'share/header'
     = content_for?(:body) ? yield(:body) : yield

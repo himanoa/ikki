@@ -10,7 +10,7 @@ class Entry < ApplicationRecord
     Rails.cache.fetch("/model/entry/#{id}") do
       pipeline = HTML::Pipeline.new([
                                       HTML::Pipeline::MarkdownFilter,
-                                      HTML::Pipeline::SyntaxHighlightFilter
+                                      HTML::Pipeline::RougeFilter
                                     ])
       pipeline.call(body)[:output].to_s
     end

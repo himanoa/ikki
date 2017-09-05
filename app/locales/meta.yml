@@ -3,3 +3,8 @@ en:
     site:
       name: "遺言書"
       separator: "-"
+ja:
+  meta:
+    site:
+      name: "遺言書"
+      separator: "-"

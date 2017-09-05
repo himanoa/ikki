@@ -1,0 +1,21 @@
+.entries {
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    h1 {
+      font-weight: 550;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.1rem;
+    }
+    time {
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .share {
+    iframe {
+      margin-right: 0.5rem;
+    }
+  }
+}

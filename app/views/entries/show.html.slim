@@ -1,3 +1,9 @@
 section.entry.container
-  h3 = @entry.title
-
+  section.header
+    h1 = @entry.title
+    time = @entry.format_updated_at
+  section.body
+    == @entry.to_html
+  section.share.float-left
+    = render 'share/header'
+    = render 'share/share'
