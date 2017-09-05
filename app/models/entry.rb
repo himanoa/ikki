@@ -7,12 +7,16 @@ class Entry < ApplicationRecord
   belongs_to :user
 
   def to_html
-    Rails.cache.fetch("/model/entry/title/#{id}") do
+    Rails.cache.fetch("/model/entry/#{id}") do
       pipeline = HTML::Pipeline.new([
         HTML::Pipeline::MarkdownFilter,
         HTML::Pipeline::SyntaxHighlightFilter
       ])
       pipeline.call(body)[:output].to_s
     end
+  end
+
+  after_commit do
+    Rails.cache.delete("/model/entry/#{id}")
   end
 end
