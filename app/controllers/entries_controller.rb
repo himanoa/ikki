@@ -14,9 +14,7 @@ class EntriesController < ApplicationController
   def show; end
 
   def create
-    if @user.entries.build(entry_params).save
-      head 201
-    end
+    head 201 if @user.entries.build(entry_params).save
   end
 
   def edit

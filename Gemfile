@@ -8,12 +8,12 @@ end
 gem 'activerecord-session_store'
 gem 'bcrypt'
 gem 'jbuilder', '~> 2.5'
+gem 'kaminari'
+gem 'milligram'
 gem 'mysql2'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.1'
 gem 'sass-rails', '~> 5.0'
-gem 'milligram'
-gem 'kaminari'
 gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug', platform: :mri
