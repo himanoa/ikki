@@ -19,7 +19,16 @@ class EntriesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @entry = Entry.find_by(id: params[:id])
+    return head 404 unless @entry
+    render :edit
+  end
+
+  def update
+    return head 204 if Entry.find(params[:id]).update(entry_params)
+    head 400
+  end
 
   def destroy
     entry = @user.entries.find_by(id: params[:id])
@@ -34,6 +43,6 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :body, :is_hidden)
+    params.require(:entry).permit(:id, :title, :body, :is_hidden)
   end
 end
