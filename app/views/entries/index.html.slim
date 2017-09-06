@@ -3,8 +3,9 @@ section.container
     - @entries.each do |e|
       li
         h4 = link_to e.title, entry_path(e)
-        h5 = e.updated_at
-        p = e.body
+        h5 = e.format_updated_at
+        p = e.description
         = link_to '続きを読む', entry_path(e), class: 'button'
 
-  = paginate @entries
+  section.container.pager
+    = paginate @entries

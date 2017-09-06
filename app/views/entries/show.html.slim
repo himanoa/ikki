@@ -1,9 +1,11 @@
+- content_for(:head) do
+  - set_meta_tags title: "#{@entry.title} #{I18n.t('.meta.site.separator')} #{I18n.t('.meta.site.name')}"
+
 section.entry.container
   section.header
     h1 = @entry.title
     time = @entry.format_updated_at
   section.body
-    == @entry.to_html
-  section.share.float-left
-    = render 'share/header'
+    == @entry.to_html.to_s
+  section.share
     = render 'share/share'

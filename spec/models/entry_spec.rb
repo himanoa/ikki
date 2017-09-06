@@ -32,7 +32,7 @@ RSpec.describe Entry, type: :model do
   context '#to_html' do
     it 'should be convert to html' do
       user.entries.first.body = '# Hello world'
-      expect(user.entries.first.to_html).to eq '<h1>Hello world</h1>'
+      expect(user.entries.first.to_html.to_s).to eq '<h1>Hello world</h1>'
     end
   end
 end

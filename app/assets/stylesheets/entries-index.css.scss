@@ -1,5 +1,11 @@
 .entries{
   .entries-list {
     list-style: none;
+    h5 {
+      letter-spacing: 0.1rem;
+    }
+  }
+  .pager {
+    text-align: center;
   }
 }

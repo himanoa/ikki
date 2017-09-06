@@ -12,7 +12,7 @@ class Entry < ApplicationRecord
                                       HTML::Pipeline::MarkdownFilter,
                                       HTML::Pipeline::RougeFilter
                                     ])
-      pipeline.call(body)[:output].to_s
+      pipeline.call(body)[:output]
     end
   end
 
