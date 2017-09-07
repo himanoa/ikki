@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.example.com"
+SitemapGenerator::Sitemap.default_host = "https://himanoa.com"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -17,7 +17,10 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/articles'
   #
-  #   add articles_path, :priority => 0.7, :changefreq => 'daily'
+  add entries_path, :priority => 0.7, :changefreq => 'daily'
+  Entry.find_each do |e|
+    add entry_path(e), lastmod: e.updated_at
+  end
   #
   # Add all articles:
   #
