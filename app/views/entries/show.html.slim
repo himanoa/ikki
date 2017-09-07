@@ -6,6 +6,6 @@ section.entry.container
     h1 = @entry.title
     time = @entry.format_updated_at
   section.body
-    == @entry.to_html.to_s
+    == @entry.cached_body
   section.share
     = render 'share/share'
