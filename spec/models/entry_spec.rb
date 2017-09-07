@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Entry, type: :model do
   let(:user) do
-    user = FactoryGirl.build(:user) do |u| # rubocop:disable Lint/UselessAssignment
+    FactoryGirl.build(:user) do |u|
       u.entries.build(FactoryGirl.attributes_for(:entry))
     end
   end
