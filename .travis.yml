@@ -1,13 +1,16 @@
 language: ruby
 rvm:
-  - 2.4.1
-  - 2.4.0
+- 2.4.1
+- 2.4.0
 service:
-  - mysql
+- mysql
 before_script:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
+- bundle exec rails db:create
+- bundle exec rails db:migrate
 script:
-  - ls
-  - bundle exec rubocop -c .rubocop.yml
-  - bundle exec rails spec
+- ls
+- bundle exec rubocop -c .rubocop.yml
+- bundle exec rails spec
+notifications:
+  slack:
+    secure: AUvEfJDsBV1nPAxUXNOtt7Sbt02NBv5Y3AZEr7fT+tYhAB3ES3c8qa9cZQhQ8oSluxLsm2LZeGcZeKDOWlIeNZaJnigxYSX7Myt6tLkfc6JCXvcxQHzGgxNP8qr2R0wcjdH83Uy5134ELbovxEzi3PGXqn5wuMnlUJu3GUbgO8zo6qXi+iJGGnt8E2v1b1/dKa8BmChHBl/52TM5yULKnTz/sv8COXUGhU0u2R2D+EGDOcNmbjBYfNxSj7JAu9y9Yp6zek7V5UPDm4bmOilYCpHTF/Ho45KpbpZvgl/0olzLJMkcjoDwZDwvXauTXjxz5O/4sR2cNjVPvtQ/kJUn7mdOETICSzk/78Oy2q1D8CnOSXJRi2fjgAzN7XTceoMv59Fnw90y4GhmvOmcr4Am0w41htNKMin5JmWPIc4ZnY2GV2TJdIAHb7FfXmATzrhUDTmz0u8N+RdAJ0eWV+zgHSGz4nh5nX5bLm8WNMxM9Cmim/UsoEBjDR6aQnmKGoWLLWdJh3d9EBDHxOeoKiAIlRe9l915P3xw66pqbtIylziYOzIOynxqLZgzcBqbL6tzpuRejaR0QISb1F17RvUIWkFS2biKK6ICpjDMEuBpdWIOFd1IHR4bPSNzzgnkrqHxogkDqGuZ2ILsOjYsZo8i3DKbsicvrx+y6/kixdIOdCU=
