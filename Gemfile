@@ -26,6 +26,7 @@ group :development do
 end
 gem 'canonical-rails'
 gem 'commonmarker'
+gem 'draper'
 gem 'github-linguist'
 gem 'html-pipeline'
 gem 'html-pipeline-rouge_filter'
@@ -33,10 +34,9 @@ gem 'locale_kit'
 gem 'meta-tags'
 gem 'premailer-rails'
 gem 'rails-i18n'
-gem 'draper'
-gem 'social-share-button'
 gem 'sitemap_generator'
 gem 'slim-rails'
+gem 'social-share-button'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development do
   gem 'brakeman', require: false

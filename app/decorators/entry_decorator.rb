@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EntryDecorator < Draper::Decorator
   delegate_all
 
@@ -12,6 +14,6 @@ class EntryDecorator < Draper::Decorator
   end
 
   def description
-    "#{model.to_html.css('p').reduce([]){|_, val| val.children.to_s }.slice(0..51)}…"
+    "#{model.to_html.css('p').reduce([]) { |_, val| val.children.to_s }.slice(0..51)}…"
   end
 end
