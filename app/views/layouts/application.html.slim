@@ -10,5 +10,6 @@ html(lang="#{I18n.locale}")
 
   body(class="#{controller.controller_name}")
     = render 'share/header'
-    = content_for?(:body) ? yield(:body) : yield
+    main
+      = content_for?(:body) ? yield(:body) : yield
     = render 'share/footer'
