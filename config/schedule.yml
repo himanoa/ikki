@@ -1,0 +1,6 @@
+sitemap_generate_command_job-every_day:
+  cron: "0 6 * * *"
+  class: "CommandJob"
+  args:
+    command: "rake"
+    args: ['sitemap:refresh']
