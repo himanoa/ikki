@@ -16,7 +16,7 @@ class EntryDecorator < Draper::Decorator
 
   def cached_body
     Rails.cache.fetch('decorators/entry/body/#{model.cache_key}') do
-      model.to_html
+      model.to_html.to_s
     end
   end
 
