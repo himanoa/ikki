@@ -19,7 +19,7 @@ class EntryDecorator < Draper::Decorator
   end
 
   def description
-    @short_body = model.to_html.css('p').reduce([]) { |acc, val| acc << val.children.to_s }[1..-1].join('')
+    @short_body = model.to_html.css('p').reduce([]) { |acc, val| acc << val.children.to_s }[0..-1].join('')
     return "#{@short_body[0..50]}‥" if @short_body.length >= DESC_LENGTH
     @short_body
   end
