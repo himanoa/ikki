@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://himanoa.com"
+SitemapGenerator::Sitemap.default_host = "https://blog.himanoa.net"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
