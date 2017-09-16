@@ -7,6 +7,7 @@ module ApplicationHelper
       site: t('meta.site.name'),
       separator: t('meta.site.separator', default: '-'),
       canonical: canonical_href,
+      viewport:  'initial-scale=1',
       reverse: true
     }
   end
