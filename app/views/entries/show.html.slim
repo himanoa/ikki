@@ -1,5 +1,9 @@
 - content_for(:head) do
   - set_meta_tags title: "#{@entry.title}"
+  - set_meta_tags description: "#{@entry.description}"
+  - set_meta_tags og: { type: 'article' }
+
+
 
 section.entry.container
   section.header

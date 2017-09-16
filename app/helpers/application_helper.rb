@@ -8,7 +8,18 @@ module ApplicationHelper
       separator: t('meta.site.separator', default: '-'),
       canonical: canonical_href,
       viewport:  'initial-scale=1',
-      reverse: true
+      keywords: 'ひまのあ 遺言書',
+      reverse: true,
+      og: {
+        title: :title,
+        type: 'blog',
+        url: request.original_url,
+        site_name: t('meta.site.name'),
+        image: 'https://pbs.twimg.com/profile_images/899998496299769857/UqOjC9jI_400x400.jpg',
+        description: :description,
+        locale: 'ja_JP'
+      }
+
     }
   end
 end
