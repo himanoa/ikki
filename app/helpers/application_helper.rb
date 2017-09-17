@@ -9,6 +9,7 @@ module ApplicationHelper
       canonical: canonical_href,
       viewport:  'initial-scale=1',
       keywords: 'ひまのあ 遺言書',
+      description: 'ひまのあが書いている プログラミング JavaScript ゲームレビュー 日誌がメインなサイトです。',
       reverse: true,
       og: {
         title: :title,
@@ -19,7 +20,6 @@ module ApplicationHelper
         description: :description,
         locale: 'ja_JP'
       }
-
     }
   end
 end
