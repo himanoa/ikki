@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   include Sessionable
 
   def index
-    @entries = Entry.where(is_hidden: false).order(created_at: :desc).page(params[:page]).per(10).decorate
+    @entries = Entry.where(is_hidden: false).order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
