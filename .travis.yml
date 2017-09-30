@@ -13,6 +13,8 @@ rvm:
 service:
 - mysql
 before_script:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
 script:
 - mysql --version
 - bundle exec rubocop -c .rubocop.yml
