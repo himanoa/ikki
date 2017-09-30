@@ -42,3 +42,4 @@
 
 .pryrc
 .DS_Store
+config/database.yml
