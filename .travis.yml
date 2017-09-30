@@ -3,39 +3,18 @@ dist: trusty
 sudo: required
 addons:
   apt:
+    sources:
+      - mysql-5.7-trusty
     packages:
-    - mysql-server-5.6
-    - mysql-client-core-5.6
-    - mysql-client-5.6
+      - mysql-server
 rvm:
 - 2.4.1
 - 2.4.0
 service:
 - mysql
 before_script:
-- |
-  sudo apt-get remove --purge "^mysql.*"
-  sudo apt-get autoremove
-  sudo apt-get autoclean
-  sudo rm -rf /var/lib/mysql
-  sudo rm -rf /var/log/mysql
-  echo mysql-apt-config mysql-apt-config/enable-repo select mysql-5.7-dmr | sudo debconf-set-selections
-  wget http://dev.mysql.com/get/mysql-apt-config_0.2.1-1ubuntu12.04_all.deb
-  sudo dpkg --install mysql-apt-config_0.2.1-1ubuntu12.04_all.deb
-  sudo apt-get update -q
-  sudo apt-get install -q -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" mysql-server
-- |
-  echo -e "[mysqld]
-  character_set_server=utf8mb4
-  collation_server=utf8mb4_unicode_ci
-  innodb_large_prefix=ON
-  innodb_file_format=Barracuda
-  innodb_file_format_max=Barracuda" | sudo tee /etc/mysql/conf.d/travis.cnf
-- sudo /etc/init.d/mysql restart
-- bundle exec rails db:create
-- bundle exec rails db:migrate
 script:
-- ls
+- mysql --version
 - bundle exec rubocop -c .rubocop.yml
 - bundle exec rails spec
 notifications:
