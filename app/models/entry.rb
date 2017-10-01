@@ -34,4 +34,22 @@ class Entry < ApplicationRecord
     return "#{@short_body[0..50]}‥" if @short_body.length >= DESC_LENGTH
     @short_body
   end
+
+  def self.to_rss
+    RSS::Maker.make('2.0') do |rss|
+      rss.channel.title = I18n.t('meta.site.name')
+      rss.channel.link = ApplicationRecord::BASE_URL
+      rss.channel.about = ApplicationRecord::BASE_URL + '/rss'
+      rss.channel.updated = Time.zone.now.to_s(:rfc882)
+      rss.channel.description =  'ひまのあが書いている プログラミング JavaScript ゲームレビュー 日誌がメインなサイトです。'
+
+      Entry.all.each do |e|
+        rss.items.new do |item|
+          item.title = e.title
+          item.description = e.description
+          item.date = updated_at.to_s(:rfc882)
+        end
+      end
+    end
+  end
 end

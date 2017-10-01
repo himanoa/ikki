@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'rss'
 
 RSpec.describe Entry, type: :model do
   let(:user) do
@@ -33,6 +34,12 @@ RSpec.describe Entry, type: :model do
     it 'should be convert to html' do
       user.entries.first.body = '# Hello world'
       expect(user.entries.first.to_html.to_s).to eq '<h1>Hello world</h1>'
+    end
+  end
+
+  context '#to_rss' do
+    it 'should be convert to rss' do
+      expect( Entry.to_rss.class ).to eq(RSS::Rss)
     end
   end
 end
