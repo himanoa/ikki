@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Entry < ApplicationRecord
+  FORMAT = '%Y/%m/%d %H:%M:%S'
+  DESC_LENGTH = 49
+
   validates :title, presence: true
   validates :body, presence: true
   validates :is_hidden, inclusion: { in: [true, false] }

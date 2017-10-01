@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:id]).decorate
+    @entry = Entry.find(params[:id])
   end
 
   def create
