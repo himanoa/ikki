@@ -3,13 +3,11 @@
   - set_meta_tags description: "#{@entry.description}"
   - set_meta_tags og: { type: 'article' }
 
-
-
-section.entry.container
-  section.header
+.entry.container
+  .header
     h1 = @entry.title
     time = @entry.format_updated_at
-  section.body
+  .body
     == @entry.cached_body
-  section.share
+  .share
     = render 'share/share'

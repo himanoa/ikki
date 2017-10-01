@@ -1,4 +1,4 @@
-section.container
+.container
   ul.entries-list
     - @entries.each do |e|
       li
@@ -7,5 +7,5 @@ section.container
         p = e.description
         = link_to '続きを読む', entry_path(e), class: 'button'
 
-  section.container.pager
+  .container.pager
     = paginate @entries
