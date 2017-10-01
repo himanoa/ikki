@@ -15,19 +15,19 @@ class Entry < ApplicationRecord
   end
 
   def format_updated_at
-    model.created_at.strftime(FORMAT)
+    created_at.strftime(FORMAT)
   end
 
   def format_created_at
-    model.created_at.strftime(FORMAT)
+    created_at.strftime(FORMAT)
   end
 
   def cached_body
-    model.to_html.to_s
+    to_html.to_s
   end
 
   def description
-    @short_body = model.to_html.css('p').reduce([]) { |acc, val| acc << val.children.to_s }[0..-1].join('')
+    @short_body = to_html.css('p').reduce([]) { |acc, val| acc << val.children.to_s }[0..-1].join('')
     return "#{@short_body[0..50]}‥" if @short_body.length >= DESC_LENGTH
     @short_body
   end
