@@ -32,7 +32,7 @@ class Entry < ApplicationRecord
   end
 
   def description
-    @short_body = to_html.css('p').reduce([]) { |acc, val| acc << val.children.to_s }[0..-1].join('')
+    @short_body = to_html.css('p').reduce([]) { |acc, val| acc << val.children.text }[0..-1].join('')
     return "#{@short_body[0..50]}‥" if @short_body.length >= DESC_LENGTH
     @short_body
   end
