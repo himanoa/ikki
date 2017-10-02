@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rss'
+
 class Entry < ApplicationRecord
   FORMAT = '%Y/%m/%d %H:%M:%S'
   DESC_LENGTH = 49
@@ -41,13 +43,14 @@ class Entry < ApplicationRecord
       rss.channel.link = ApplicationRecord::BASE_URL
       rss.channel.about = ApplicationRecord::BASE_URL + '/rss'
       rss.channel.updated = Time.zone.now.to_s(:rfc882)
-      rss.channel.description =  'ひまのあが書いている プログラミング JavaScript ゲームレビュー 日誌がメインなサイトです。'
+      rss.channel.description = 'ひまのあが書いている プログラミング JavaScript ゲームレビュー 日誌がメインなサイトです。'
 
       Entry.all.each do |e|
-        rss.items.new do |item|
+        rss.items.new_item do |item|
           item.title = e.title
           item.description = e.description
-          item.date = updated_at.to_s(:rfc882)
+          item.date = e.updated_at.to_s(:rfc882)
+          item.link = ApplicationRecord::BASE_URL + Rails.application.routes.url_helpers.entry_path(e.id)
         end
       end
     end

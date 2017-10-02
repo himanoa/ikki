@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   root 'entries#index'
+  get 'rss' => 'rss#index'
   resources :users, :entries, :pages
-  scope '/manage' do
+  constraints subdomain: 'manage' do
     mount Sidekiq::Web, at: "/sidekiq"
   end
 end

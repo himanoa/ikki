@@ -8,7 +8,7 @@ module ApplicationHelper
       separator: t('meta.site.separator', default: '-'),
       canonical: canonical_href,
       viewport:  'initial-scale=1',
-      keywords: 'ひまのあ 遺言書',
+      keywords: 'ひまのあ himanoa ブログ Blog 遺言書',
       description: 'ひまのあが書いている プログラミング JavaScript ゲームレビュー 日誌がメインなサイトです。',
       reverse: true,
       og: {

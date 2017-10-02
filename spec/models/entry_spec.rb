@@ -39,7 +39,7 @@ RSpec.describe Entry, type: :model do
 
   context '#to_rss' do
     it 'should be convert to rss' do
-      expect( Entry.to_rss.class ).to eq(RSS::Rss)
+      expect(Entry.to_rss.class).to eq(RSS::Rss)
     end
   end
 end
