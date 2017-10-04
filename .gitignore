@@ -43,3 +43,5 @@
 .pryrc
 .DS_Store
 config/database.yml
+
+/config/puma.rb
