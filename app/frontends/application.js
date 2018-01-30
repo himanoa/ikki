@@ -1,4 +1,5 @@
-(function () {
+document.addEventListener('DOMContentLoaded', () =>  {
+  console.log('poepoe')
   window.__updateLetsBeerButton__ = function () {
     const twitterIntentUrl = 'https://twitter.com/intent/tweet'
     const defaultText = '飲みに行くぞ!!!🍺'
@@ -21,5 +22,6 @@
         })
       })
   }
-  __updateLetsBeerButton__()
-})()
+  window.__updateLetsBeerButton__()
+})
+

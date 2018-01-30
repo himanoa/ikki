@@ -6,6 +6,7 @@ html(lang="#{I18n.locale}")
     = display_meta_tags(default_meta_tags)
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    script src="//pastak.github.io/lets-beer-button/embed.js"
     = csrf_meta_tags
     = content_for?(:head) ? yield(:head) : nil
 
